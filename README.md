@@ -2,6 +2,8 @@
 
 > TodoMVC app for practicing conditional test commands using [cypress-if](https://github.com/bahmutov/cypress-if) plugin
 
+See the course [Cypress Plugins](https://cypress.tips/courses/cypress-plugins)
+
 Install the NPM dependencies
 
 ```
