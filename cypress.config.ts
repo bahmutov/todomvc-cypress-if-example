@@ -7,6 +7,6 @@ export default defineConfig({
       api: 'http://localhost:3000'
     },
     viewportWidth: 1000,
-    viewportHeight: 1200
+    viewportHeight: 1000
   }
 });

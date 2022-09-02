@@ -10,10 +10,19 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ListComponent } from './components/list/list.component';
 import { ItemComponent } from './components/item/item.component';
 import { CopyRightComponent } from './components/copy-right/copy-right.component';
+import { SurveyComponent } from './components/survey/survey.component';
 import { createStore } from './store';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, FooterComponent, ListComponent, ItemComponent, CopyRightComponent],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    FooterComponent,
+    ListComponent,
+    ItemComponent,
+    CopyRightComponent,
+    SurveyComponent
+  ],
   imports: [
     BrowserModule,
     FormsModule,
