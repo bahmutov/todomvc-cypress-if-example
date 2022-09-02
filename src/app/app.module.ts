@@ -11,6 +11,7 @@ import { ListComponent } from './components/list/list.component';
 import { ItemComponent } from './components/item/item.component';
 import { CopyRightComponent } from './components/copy-right/copy-right.component';
 import { SurveyComponent } from './components/survey/survey.component';
+import { SettingsComponent } from './components/settings/settings.component';
 import { createStore } from './store';
 
 @NgModule({
@@ -21,7 +22,8 @@ import { createStore } from './store';
     ListComponent,
     ItemComponent,
     CopyRightComponent,
-    SurveyComponent
+    SurveyComponent,
+    SettingsComponent
   ],
   imports: [
     BrowserModule,
