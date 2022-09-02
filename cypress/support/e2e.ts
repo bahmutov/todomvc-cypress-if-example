@@ -12,3 +12,6 @@
 // You can read more here:
 // https://on.cypress.io/configuration
 // ***********************************************************
+
+// https://github.com/bahmutov/cypress-if
+import 'cypress-if';
