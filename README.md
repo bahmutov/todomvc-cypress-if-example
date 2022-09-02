@@ -1,4 +1,5 @@
 # TodoMVC
+
 > TodoMVC app for practicing conditional test commands using [cypress-if](https://github.com/bahmutov/cypress-if) plugin
 
 Install the NPM dependencies
@@ -14,7 +15,7 @@ $ npm start
 $ open localhost:9100
 ```
 
-![Application](./slides/intro/img/todomvc.png)
+![Application](./images/todomvc.png)
 
 Check if Cypress v10 opens
 
@@ -24,7 +25,7 @@ $ npx cypress open
 
 You should see something like this:
 
-![Cypress open](./slides/intro/img/cy-open.png)
+![Cypress open](./images/cy-open.png)
 
 ## Small print
 
