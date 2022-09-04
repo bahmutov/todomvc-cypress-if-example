@@ -12,7 +12,8 @@ export class SurveyComponent implements OnInit {
     setTimeout(() => {
       // increase the threshold to 1
       // to see the survey always popup
-      if (Math.random() < 0.1) {
+      // disable the survey for this lesson
+      if (Math.random() < 0) {
         this.showSurvey = true;
       }
     }, 20);
