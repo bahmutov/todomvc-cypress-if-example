@@ -1,7 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
-import { selectCompletedCount, selectItemsLeft } from '../../store/selectors/todo.selector';
+import {
+  selectCompletedCount,
+  selectItemsLeft
+} from '../../store/selectors/todo.selector';
 import { FILTERS } from '../../constants/filter';
 import { TodoStateInterface } from '../../store/todo-state.interface';
 import { onClearCompleted } from '../../store/actions/todo.action';
@@ -11,12 +14,14 @@ import { onFilterSelect } from '../../store/actions/filter.action';
   selector: 'app-footer',
   templateUrl: './footer.component.html'
 })
-export class FooterComponent {
+export class FooterComponent implements OnInit {
   filterTitles = [
     { key: FILTERS.all, value: 'All' },
     { key: FILTERS.active, value: 'Active' },
     { key: FILTERS.completed, value: 'Completed' }
   ];
+
+  visibleFooter = false;
 
   itemsLeft$: Observable<number>;
 
@@ -28,9 +33,18 @@ export class FooterComponent {
 
   constructor(private store: Store<TodoStateInterface>) {
     this.itemsLeft$ = store.select(selectItemsLeft);
-    this.completedCount$ = store.select(selectCompletedCount);
-    this.itemText$ = store.select((state: TodoStateInterface) => (selectItemsLeft(state) === 1 ? 'item' : 'items'));
+    this.completedCount$ = store.select(
+      selectCompletedCount
+    );
+    this.itemText$ = store.select(
+      (state: TodoStateInterface) =>
+        selectItemsLeft(state) === 1 ? 'item' : 'items'
+    );
     this.filter$ = store.select('filter');
+  }
+
+  ngOnInit() {
+    this.visibleFooter = false;
   }
 
   handleClearCompleted() {
@@ -39,5 +53,13 @@ export class FooterComponent {
 
   handleFilterSelect(filter: string) {
     this.store.dispatch(onFilterSelect(filter));
+  }
+
+  showFooter() {
+    console.log(
+      'set visible footer to',
+      this.visibleFooter
+    );
+    this.visibleFooter = true;
   }
 }
